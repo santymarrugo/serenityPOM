@@ -26,7 +26,7 @@ public class PaginaSignIn {
         btnLogin.click();
     }
 
-    //Metodo para hacer autenticacion
+    //Metodo para hacer autenticacion en la pagina
     public void autenticarse(String email, String password){
         escribirEmail(email);
         escribirPassword(password);
