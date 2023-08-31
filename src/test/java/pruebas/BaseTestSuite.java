@@ -8,6 +8,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import pageobjects.PaginaPrincipal;
+import pageobjects.PaginaSignIn;
 
 import java.io.*;
 
@@ -15,10 +16,14 @@ public class BaseTestSuite {
     //Instancia del driver
     WebDriver edgeDriver;
     PaginaPrincipal paginaPrincipal;
+    PaginaSignIn paginaSignIn;
 
     private void inicializarPaginas(WebDriver driver) {
+
         paginaPrincipal = new PaginaPrincipal(edgeDriver);
+        paginaSignIn = new PaginaSignIn(edgeDriver);
     }
+
 
     @Before
     public void abrirDriver() throws IOException {

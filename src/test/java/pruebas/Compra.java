@@ -28,6 +28,7 @@ public class Compra extends BaseTestSuite {
 
         paginaPrincipal.irBotonSingIn();
 
+
         /*
         Definimos los elementos Web
         * */
@@ -35,14 +36,14 @@ public class Compra extends BaseTestSuite {
 //        WebElement botonSingIn = edgeDriver.findElement(By.xpath("//div[@class='panel header']//a[contains(text(),'Sign In')]"));
 //        botonSingIn.click();
         //Input email address
-        WebElement inputEmail = edgeDriver.findElement(By.xpath("//input[@id='email']"));
-        inputEmail.sendKeys("herbergambon@yopmail.com");
+//        WebElement inputEmail = edgeDriver.findElement(By.xpath("//input[@id='email']"));
+//        inputEmail.sendKeys("herbergambon@yopmail.com");
         //Input password
-        WebElement inputPassword = edgeDriver.findElement(By.xpath("//fieldset[@class='fieldset login']//input[@id='pass']"));
-        inputPassword.sendKeys("12345ABC#");
-        //Boton iniciar sesion
-        WebElement btnLogin = edgeDriver.findElement(By.xpath("//fieldset[@class='fieldset login']//span[contains(text(),'Sign In')]"));
-        btnLogin.click();
+//        WebElement inputPassword = edgeDriver.findElement(By.xpath("//fieldset[@class='fieldset login']//input[@id='pass']"));
+//        inputPassword.sendKeys("12345ABC#");
+//        //Boton iniciar sesion
+//        WebElement btnLogin = edgeDriver.findElement(By.xpath("//fieldset[@class='fieldset login']//span[contains(text(),'Sign In')]"));
+//        btnLogin.click();
         esperar();
         //Validamos que se haya iniciado sesion correctamente, verificando el nombre del usuario
         String msjInicioExitoso = edgeDriver.findElement(By.xpath("//span[contains(text(), 'Welcome, herber gambon!')]")).getText();
