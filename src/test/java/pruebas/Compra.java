@@ -22,7 +22,6 @@ public class Compra extends BaseTestSuite {
         paginaSignIn.autenticarse("herbergambon@yopmail.com", "12345ABC#");
         esperar();
         paginaSignIn.verificarMsjInicioSesionExitosa("Welcome, herber gambon!");
-        //CapturaPantallaUtil.tomarCaptura(edgeDriver, "verificarMsjInicioSesionExitosa");
         paginaProductos.irACategoriaJackets();
         esperar();
         esperar();
@@ -31,7 +30,6 @@ public class Compra extends BaseTestSuite {
         paginaAgregarAlCarrito.ClbtnTallaS();
         paginaAgregarAlCarrito.ClbtnColor();
         paginaAgregarAlCarrito.ClbtnAddToCart2();
-        //CapturaPantallaUtil.tomarCaptura(edgeDriver, "ClbtnAddToCart2");
         esperar();
         paginaAgregarAlCarrito.msjProductoAgregadoExito("You added Kenobi Trail Jacket to your shopping cart.");
         paginaFinalizarPago.ClbtnCart();
