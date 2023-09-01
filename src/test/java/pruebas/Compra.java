@@ -44,6 +44,5 @@ public class Compra extends BaseTestSuite {
         paginaFinalizarPago.ClbtnPlaceOrder();
         esperar();
         paginaFinalizarPago.msjPedidoFinalizadoConExito("Thank you for your purchase!");
-        //CapturaPantallaUtil.tomarCaptura(edgeDriver, "msjPedidoFinalizadoConExito");
     }
 }
