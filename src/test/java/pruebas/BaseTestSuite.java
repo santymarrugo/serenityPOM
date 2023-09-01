@@ -31,26 +31,24 @@ public class BaseTestSuite {
         paginaFinalizarPago = new PaginaFinalizarPago(edgeDriver);
     }
     @Before
-    public void abrirDriver() throws IOException {
-        //Ruta donde se encuentra el ejecutable del driver de FireFox
+    public void abrirDriver() {
+        //Ruta donde se encuentra el ejecutable del driver de Edge
         System.setProperty("webdriver.edge.driver", "src\\main\\resources\\msedgedriver.exe");
 
-        //Nueva instancia de FirefoxDriver
+        //Nueva instancia de Edge
         edgeDriver = new EdgeDriver();
         edgeDriver.manage().window().maximize();
 
-//        //Guarda una captura al final del test
-//        File capturaFinal = ((TakesScreenshot) edgeDriver).getScreenshotAs(OutputType.FILE);
-//        FileUtils.copyFile(capturaFinal, new File("./images/imagen1.png"));
-//        inicializarPaginas(edgeDriver);
+        inicializarPaginas(edgeDriver);
 
     }
 
     @After
     public void cerrar_driver() {
         //Cerrar ventana, apagar el driver
-//        if (edgeDriver != null) {
-//            edgeDriver.quit();
-//        }
+        // Si el driver el nulo nunca se inicializó y no se puede cerrar
+        if (edgeDriver != null) {
+            edgeDriver.quit();
+        }
     }
 }
