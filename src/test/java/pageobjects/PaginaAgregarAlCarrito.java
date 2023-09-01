@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class PaginaAgregarAlCarrito {
 
+    //Instanciamos el driver porque vamos a crear una acción
     WebDriver driver;
     //Localizamos los elementos
     @FindBy(xpath = "//img[@alt='Kenobi Trail Jacket']")
@@ -29,7 +30,6 @@ public class PaginaAgregarAlCarrito {
         accion.moveToElement(irProductoKenobi).moveToElement(btnAddToCart1).click().build().perform();
 
     }
-
     //Interacciones con los botones para agregar al carrito
     public void ClbtnTallaS(){
         btnTallaS.click();

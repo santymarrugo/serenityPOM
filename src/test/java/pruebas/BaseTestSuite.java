@@ -7,28 +7,28 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-import pageobjects.PaginaAgregarAlCarrito;
-import pageobjects.PaginaPrincipal;
-import pageobjects.PaginaProductos;
-import pageobjects.PaginaSignIn;
+import pageobjects.*;
 
 import java.io.*;
 
 public class BaseTestSuite {
     //Instancia del driver
     WebDriver edgeDriver;
-    //Instancias de las paginas
+    //Instancias de todas las paginas
     PaginaPrincipal paginaPrincipal;
     PaginaSignIn paginaSignIn;
     PaginaProductos paginaProductos;
     PaginaAgregarAlCarrito paginaAgregarAlCarrito;
+    PaginaFinalizarPago paginaFinalizarPago;
 
-    //Todas las paginas creadas en nuestro proyecto se inicializan en esta seccion
+    //Todas las paginas creadas en nuestro proyecto se inicializan
+    // se instancias los objetos de las clases de las paginas
     private void inicializarPaginas(WebDriver driver) {
         paginaPrincipal = new PaginaPrincipal(edgeDriver);
         paginaSignIn = new PaginaSignIn(edgeDriver);
         paginaProductos = new PaginaProductos(edgeDriver);
         paginaAgregarAlCarrito = new PaginaAgregarAlCarrito(edgeDriver);
+        paginaFinalizarPago = new PaginaFinalizarPago(edgeDriver);
     }
     @Before
     public void abrirDriver() throws IOException {
@@ -39,10 +39,10 @@ public class BaseTestSuite {
         edgeDriver = new EdgeDriver();
         edgeDriver.manage().window().maximize();
 
-        //Guarda una captura al final del test
-        File capturaFinal = ((TakesScreenshot) edgeDriver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(capturaFinal, new File("./images/imagen1.png"));
-        inicializarPaginas(edgeDriver);
+//        //Guarda una captura al final del test
+//        File capturaFinal = ((TakesScreenshot) edgeDriver).getScreenshotAs(OutputType.FILE);
+//        FileUtils.copyFile(capturaFinal, new File("./images/imagen1.png"));
+//        inicializarPaginas(edgeDriver);
 
     }
 
